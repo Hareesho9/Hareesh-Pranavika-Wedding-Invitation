@@ -49,7 +49,7 @@
       background-image:
         radial-gradient(circle at 25px 25px, var(--gold) 2px, transparent 2px),
         linear-gradient(135deg, transparent 49%, rgba(184,138,44,.08) 50%, transparent 51%);
-      background-size: 60px 60px, 36px 36px;
+      background-size:60px 60px, 36px 36px;
       mix-blend-mode:multiply;
     }
 
@@ -87,7 +87,7 @@
       left:0;
       width:100%;
       z-index:20;
-      backdrop-filter: blur(12px);
+      backdrop-filter:blur(12px);
       background:rgba(251,245,234,.76);
       border-bottom:1px solid rgba(184,138,44,.15);
     }
@@ -109,6 +109,7 @@
       color:var(--gold-deep);
       text-transform:uppercase;
       white-space:nowrap;
+      font-weight:700;
     }
 
     .nav{
@@ -232,6 +233,8 @@
       transition:.3s ease;
       border:1px solid rgba(184,138,44,.25);
       cursor:pointer;
+      font-size:1rem;
+      font-family:inherit;
     }
 
     .btn-primary{
@@ -336,8 +339,8 @@
       background:linear-gradient(135deg, rgba(109,32,51,.92), rgba(62,17,30,.9));
       color:#fffaf4;
       border:1px solid rgba(255,255,255,.15);
-      box-shadow:0 18px 34px rgba(72, 22, 34, .28);
-      backdrop-filter: blur(8px);
+      box-shadow:0 18px 34px rgba(72,22,34,.28);
+      backdrop-filter:blur(8px);
       text-align:center;
     }
 
@@ -377,10 +380,25 @@
       text-transform:uppercase;
     }
 
+    .hero-temple{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      width:100%;
+      height:42%;
+      background-image:url('assets/south-temple.PNG');
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center bottom;
+      z-index:2;
+      border-radius:0 0 36px 36px;
+    }
+
     .floating-ring{
       position:absolute;
       right:28px;
-      bottom:28px;
+      bottom:90px;
       width:88px;
       height:88px;
       border-radius:50%;
@@ -390,23 +408,10 @@
       color:#fff6e5;
       font-size:1.8rem;
       background:rgba(184,138,44,.32);
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
       z-index:4;
       box-shadow:0 10px 24px rgba(0,0,0,.16);
       animation:float 4.5s ease-in-out infinite;
-    }
-
-    .hero-temple{
-      position:absolute;
-      left:50%;
-      bottom:18px;
-      transform:translateX(-50%);
-      width:min(520px, 88%);
-      height:260px;
-      background:url('assets/south-temple.png') center bottom/contain no-repeat;
-      z-index:3;
-      pointer-events:none;
-      filter:drop-shadow(0 12px 24px rgba(0,0,0,.18));
     }
 
     @keyframes float{
@@ -465,45 +470,29 @@
     }
 
     .event-art{
-      min-height:290px;
-      background-size:cover;
-      background-position:center;
-      position:relative;
-      background-color:#f7f1e2;
+      min-height:260px;
+      background:#f8f5f0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px;
+      overflow:hidden;
     }
 
-    .event-art.contain{
-      background-size:contain;
-      background-repeat:no-repeat;
-      background-position:center;
-      background-color:#f7f1e2;
-    }
-
-    .event-art::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(31,17,4,.05), transparent 42%, rgba(31,17,4,.14));
-    }
-
-    .zoom-art{
-      background-repeat:no-repeat;
-    }
-
-    .haldi-art{
-      background-size:cover;
-      background-position:center 28%;
-    }
-
-    .sangeet-art{
-      background-size:cover;
-      background-position:center 22%;
+    .event-art img{
+      width:100%;
+      height:240px;
+      object-fit:contain;
+      object-position:center top;
+      border-radius:18px;
+      display:block;
     }
 
     .event-body{
       padding:28px;
       display:grid;
       gap:16px;
+      flex:1;
     }
 
     .event-pill{
@@ -534,14 +523,13 @@
     }
 
     .meta-line{
-      display:flex;
-      align-items:flex-start;
+      display:grid;
+      grid-template-columns:78px 1fr;
       gap:12px;
       line-height:1.65;
     }
 
     .meta-line strong{
-      min-width:78px;
       color:var(--gold-deep);
       font-size:.95rem;
     }
@@ -671,19 +659,6 @@
       overflow:hidden;
     }
 
-    .family-card h4{
-      margin:0 0 14px;
-      font-family:'Cormorant Garamond',serif;
-      color:var(--maroon);
-      font-size:2.2rem;
-    }
-
-    .family-card p{
-      margin:0 0 16px;
-      color:var(--muted);
-      line-height:1.8;
-    }
-
     .family-label{
       display:inline-flex;
       padding:8px 14px;
@@ -705,62 +680,463 @@
       margin:0 0 12px;
     }
 
-    .rsvp-wrap{
-      display:grid;
-      grid-template-columns:1fr .95fr;
-      gap:26px;
-      margin-top:40px;
-    }
-
-    .rsvp-card{
-      padding:34px;
-      background:rgba(255,255,255,.6);
-      border:1px solid rgba(184,138,44,.16);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-soft);
-      overflow:hidden;
-    }
-
-    .rsvp-card h4{
-      margin:0 0 14px;
-      font-family:'Cormorant Garamond',serif;
-      font-size:2.4rem;
-      color:var(--maroon);
-    }
-
-    .rsvp-card p{
-      margin:0 0 16px;
+    .family-card p{
+      margin:0;
       color:var(--muted);
       line-height:1.8;
     }
 
-    .detail-list{
-      display:grid;
-      gap:14px;
-      margin-top:18px;
+    .location-card{
+      margin-top:40px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(184,138,44,.16);
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    .detail-item{
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(184,138,44,.06);
-      border:1px solid rgba(184,138,44,.12);
-    }
-
-    .detail-item strong{
-      display:block;
-      margin-bottom:4px;
-      color:var(--gold-deep);
-    }
-
-    .action-stack{
-      display:grid;
-      gap:14px;
-      margin-top:22px;
-    }
-
-    .action-stack a{
+    .map-frame{
       width:100%;
+      height:280px;
+      background:#eee;
+      overflow:hidden;
+    }
+
+    .location-content{
+      padding:34px 28px 36px;
+      text-align:center;
+    }
+
+    .location-icon-wrap{
+      display:flex;
+      justify-content:center;
+      margin-top:-72px;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .location-icon{
+      width:96px;
+      height:96px;
+      border-radius:50%;
+      background:#f7f2ea;
+      border:4px solid #e4dbcf;
+      display:grid;
+      place-items:center;
+      font-size:2rem;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .location-content h4{
+      margin:0 0 14px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:3rem;
+      line-height:1;
+      color:var(--maroon);
+    }
+
+    .venue-address{
+      font-family:'Cinzel',serif;
+      color:var(--ink);
+      font-size:1.05rem;
+      line-height:1.8;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      max-width:560px;
+      margin:0 auto 26px;
+    }
+
+    .venue-actions{
+      display:grid;
+      gap:16px;
+      max-width:560px;
+      margin:0 auto;
+    }
+
+    .venue-btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      text-decoration:none;
+      border-radius:999px;
+      padding:18px 24px;
+      border:1px solid rgba(184,138,44,.18);
+      transition:.28s ease;
+    }
+
+    .venue-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    .maps-btn{
+      background:#f8f1f3;
+      border-color:rgba(194,160,170,.35);
+    }
+
+    .whatsapp-btn{
+      background:#f1fbf4;
+      border-color:rgba(37,211,102,.22);
+    }
+
+    .venue-btn-icon{
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      flex:0 0 64px;
+      font-size:1.6rem;
+      background:#e9edf4;
+      color:#222;
+    }
+
+    .whatsapp-btn .venue-btn-icon{
+      background:#dff7e7;
+    }
+
+    .venue-btn-text{
+      flex:1;
+      text-align:left;
+      display:grid;
+      gap:4px;
+    }
+
+    .venue-btn-text strong{
+      display:block;
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+      font-weight:600;
+      color:var(--ink);
+      line-height:1;
+    }
+
+    .venue-btn-text small{
+      display:block;
+      font-size:1rem;
+      color:var(--muted);
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+
+    .venue-btn-open{
+      font-size:1.8rem;
+      color:var(--ink);
+      flex:0 0 auto;
+    }
+
+    .venue-contact{
+      margin:22px 0 0;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .boarding-wrap{
+      position:relative;
+      max-width:780px;
+      margin:58px auto 0;
+      padding-top:26px;
+    }
+
+    .boarding-top-icon{
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:2.2rem;
+      z-index:3;
+      color:var(--maroon);
+    }
+
+    .boarding-pass-card{
+      position:relative;
+      background:#fcfaf7;
+      border:2px dashed rgba(160,140,130,.35);
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .boarding-pass-card::before,
+    .boarding-pass-card::after{
+      content:"";
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:28px;
+      height:56px;
+      background:var(--bg);
+      border-radius:999px;
+      z-index:2;
+    }
+
+    .boarding-pass-card::before{ left:-14px; }
+    .boarding-pass-card::after{ right:-14px; }
+
+    .boarding-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:22px 28px;
+      background:#f4ecec;
+      border-bottom:1px dashed rgba(160,140,130,.25);
+      font-family:'Cinzel',serif;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:var(--maroon);
+      font-size:1rem;
+    }
+
+    .boarding-body{
+      padding:42px 28px 34px;
+      text-align:center;
+    }
+
+    .boarding-label{
+      font-family:'Cinzel',serif;
+      font-size:1rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--gold-deep);
+      margin-bottom:12px;
+    }
+
+    .boarding-body h4{
+      margin:0;
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.4rem, 5vw, 4.2rem);
+      line-height:1.05;
+      color:var(--maroon);
+    }
+
+    .boarding-divider{
+      width:86%;
+      margin:28px auto 24px;
+      border-top:2px dotted rgba(160,140,130,.28);
+    }
+
+    .boarding-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:18px;
+      max-width:680px;
+      margin:0 auto 28px;
+    }
+
+    .boarding-item small{
+      display:block;
+      font-family:'Cinzel',serif;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+      font-size:.82rem;
+      margin-bottom:10px;
+    }
+
+    .boarding-item strong{
+      display:block;
+      font-size:clamp(1.2rem, 2.4vw, 2rem);
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    .boarding-barcode{
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+    }
+
+    .boarding-barcode span{
+      display:block;
+      width:360px;
+      height:92px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #7e5962 0 4px,
+          transparent 4px 8px,
+          #7e5962 8px 10px,
+          transparent 10px 14px,
+          #7e5962 14px 17px,
+          transparent 17px 21px
+        );
+      border-radius:4px;
+      opacity:.92;
+    }
+
+    .boarding-code{
+      margin-top:10px;
+      font-family:'Cinzel',serif;
+      letter-spacing:.28em;
+      color:var(--ink);
+      font-size:1rem;
+    }
+
+    .rsvp-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(3rem,6vw,4rem);
+      margin:0;
+      color:var(--ink);
+    }
+
+    .rsvp-sub{
+      font-family:'Cinzel',serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin:10px 0;
+      color:var(--muted);
+    }
+
+    .rsvp-note{
+      font-style:italic;
+      color:var(--muted);
+      margin-bottom:30px;
+    }
+
+    .rsvp-form-card{
+      max-width:640px;
+      margin:0 auto;
+      padding:40px 30px;
+      background:#fbf9f6;
+      border-radius:28px;
+      border:1px solid rgba(184,138,44,.18);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .form-group{
+      margin-bottom:26px;
+    }
+
+    .form-group label{
+      display:block;
+      margin-bottom:10px;
+      font-family:'Cinzel',serif;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--ink);
+      font-size:.9rem;
+    }
+
+    .form-group input,
+    .form-group select{
+      width:100%;
+      padding:16px 18px;
+      border-radius:14px;
+      border:1px solid rgba(184,138,44,.25);
+      background:#fff;
+      font-size:1.05rem;
+      outline:none;
+      font-family:inherit;
+      color:var(--ink);
+    }
+
+    .phone-row{
+      display:flex;
+      gap:12px;
+    }
+
+    .phone-row select{
+      max-width:120px;
+    }
+
+    .attend-toggle{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .toggle-option{
+      position:relative;
+      display:block;
+      cursor:pointer;
+    }
+
+    .toggle-option input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .toggle-option span{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(184,138,44,.25);
+      background:#fff;
+      font-size:1rem;
+      font-weight:600;
+      transition:.25s ease;
+    }
+
+    .toggle-option input:checked + span{
+      background:linear-gradient(135deg, rgba(184,138,44,.18), rgba(184,138,44,.08));
+      border-color:rgba(184,138,44,.45);
+      color:var(--gold-deep);
+      box-shadow:0 8px 20px rgba(184,138,44,.12);
+    }
+
+    .rsvp-submit{
+      width:100%;
+      margin-top:10px;
+      padding:16px;
+      border:none;
+      border-radius:999px;
+      background:#25D366;
+      color:#fff;
+      font-size:1.1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s ease;
+      position:relative;
+      overflow:hidden;
+      font-family:inherit;
+    }
+
+    .rsvp-submit:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .rsvp-submit.loading{
+      pointer-events:none;
+      opacity:.95;
+    }
+
+    .rsvp-submit .btn-loader{
+      display:none;
+      width:20px;
+      height:20px;
+      border:2px solid rgba(255,255,255,.45);
+      border-top-color:#fff;
+      border-radius:50%;
+      animation:spin .8s linear infinite;
+      margin-left:10px;
+      vertical-align:middle;
+    }
+
+    .rsvp-submit.loading .btn-loader{
+      display:inline-block;
+    }
+
+    .rsvp-success{
+      display:none;
+      margin-top:14px;
+      text-align:center;
+      color:var(--gold-deep);
+      font-weight:600;
+    }
+
+    .rsvp-success.show{
+      display:block;
+      animation:fadeUp .4s ease;
     }
 
     .footer{
@@ -791,6 +1167,10 @@
     .reveal.visible{
       opacity:1;
       transform:translateY(0);
+    }
+
+    .hidden{
+      display:none !important;
     }
 
     .temple-top, .temple-bottom{
@@ -837,6 +1217,7 @@
       gap:10px;
       text-decoration:none;
       font-weight:700;
+      font-family:inherit;
     }
 
     .fab.secondary{
@@ -849,11 +1230,19 @@
       height:20px;
     }
 
+    @keyframes spin{
+      to{ transform:rotate(360deg); }
+    }
+
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(8px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
     @media (max-width: 980px){
       .hero-shell,
-      .rsvp-wrap,
-      .family-grid,
-      .fun-card{
+      .fun-card,
+      .family-grid{
         grid-template-columns:1fr;
       }
 
@@ -866,6 +1255,10 @@
         order:-1;
       }
 
+      .hero-temple{
+        height:38%;
+      }
+
       .countdown{
         grid-template-columns:repeat(2, minmax(100px, 1fr));
         max-width:420px;
@@ -875,32 +1268,174 @@
         min-height:300px;
       }
 
-      .hero-temple{
-        height:210px;
-        width:90%;
+      .timeline-item{
+        grid-template-columns:1fr;
+      }
+
+      .boarding-grid{
+        grid-template-columns:repeat(2, 1fr);
       }
     }
 
     @media (max-width: 680px){
-      .topbar-inner{ padding:12px 14px; }
-      .brand{ font-size:12px; }
-      .nav{ gap:6px; }
-      .nav a{ font-size:12px; padding:6px 9px; }
-      .section{ padding:80px 14px; }
-      .hero h1{ font-size:4rem; }
-      .hero-card{ min-height:460px; }
-      .timeline-item{ grid-template-columns:1fr; }
-      .timeline-date{ padding:18px; }
-      .event-body{ padding:22px; }
-      .floating-actions{ right:14px; bottom:14px; }
-      .fab{ height:52px; min-width:52px; padding:0 14px; font-size:.92rem; }
-      .hero-card-badge strong{ font-size:1.9rem; }
-      .bell-row{ font-size:20px; gap:8px; }
+      .topbar-inner{
+        padding:12px 14px;
+        align-items:flex-start;
+      }
+
+      .brand{
+        font-size:13px;
+        font-weight:700;
+      }
+
+      .nav{
+        gap:6px;
+        justify-content:flex-end;
+      }
+
+      .nav a{
+        font-size:12px;
+        padding:6px 9px;
+      }
+
+      .section{
+        padding:80px 14px;
+      }
+
+      .hero h1{
+        font-size:4rem;
+      }
+
+      .hero-card{
+        min-height:460px;
+      }
 
       .hero-temple{
-        height:190px;
-        width:90%;
+        height:34%;
+      }
+
+      .floating-ring{
+        right:20px;
+        bottom:70px;
+        width:74px;
+        height:74px;
+      }
+
+      .hero-card-badge strong{
+        font-size:1.9rem;
+      }
+
+      .bell-row{
+        font-size:20px;
+        gap:8px;
+      }
+
+      .event-body{
+        padding:22px;
+      }
+
+      .map-frame{
+        height:220px;
+      }
+
+      .location-content{
+        padding:28px 18px 28px;
+      }
+
+      .location-icon-wrap{
+        margin-top:-58px;
+      }
+
+      .location-icon{
+        width:82px;
+        height:82px;
+        font-size:1.7rem;
+      }
+
+      .location-content h4{
+        font-size:2.4rem;
+      }
+
+      .venue-address{
+        font-size:.95rem;
+        line-height:1.7;
+      }
+
+      .venue-btn{
+        padding:14px 16px;
+        gap:12px;
+      }
+
+      .venue-btn-icon{
+        width:54px;
+        height:54px;
+        flex:0 0 54px;
+        font-size:1.3rem;
+      }
+
+      .venue-btn-text strong{
+        font-size:1.45rem;
+      }
+
+      .venue-btn-text small{
+        font-size:.82rem;
+      }
+
+      .venue-btn-open{
+        font-size:1.4rem;
+      }
+
+      .boarding-header{
+        padding:18px 18px;
+        font-size:.82rem;
+        letter-spacing:.1em;
+      }
+
+      .boarding-body{
+        padding:32px 18px 26px;
+      }
+
+      .boarding-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:18px 12px;
+      }
+
+      .boarding-barcode span{
+        width:240px;
+        height:72px;
+      }
+
+      .boarding-code{
+        font-size:.82rem;
+        letter-spacing:.18em;
+      }
+
+      .rsvp-form-card{
+        padding:28px 18px;
+      }
+
+      .phone-row{
+        flex-direction:column;
+      }
+
+      .phone-row select{
+        max-width:100%;
+      }
+
+      .attend-toggle{
+        grid-template-columns:1fr;
+      }
+
+      .floating-actions{
+        right:14px;
         bottom:14px;
+      }
+
+      .fab{
+        height:52px;
+        min-width:52px;
+        padding:0 14px;
+        font-size:.92rem;
       }
     }
   </style>
@@ -923,7 +1458,8 @@
         <a href="#events">Events</a>
         <a href="#schedule">Schedule</a>
         <a href="#family">Family</a>
-        <a href="#rsvp">Details</a>
+        <a href="#details">Details</a>
+        <a href="#rsvp">RSVP</a>
       </nav>
     </div>
   </div>
@@ -984,7 +1520,9 @@
 
         <div class="card-grid">
           <article class="event-card reveal">
-            <div class="event-art zoom-art haldi-art" style="background-image:url('assets/haldi.png')"></div>
+            <div class="event-art">
+              <img src="assets/haldi.png" alt="Haldi ceremony illustration">
+            </div>
             <div class="event-body">
               <span class="event-pill">Haldi Ceremony</span>
               <h4>Haldi</h4>
@@ -997,7 +1535,9 @@
           </article>
 
           <article class="event-card reveal">
-            <div class="event-art" style="background-image:url('assets/wedding-theme.jpg')"></div>
+            <div class="event-art">
+              <img src="assets/wedding-theme.jpg" alt="Wedding ceremony illustration">
+            </div>
             <div class="event-body">
               <span class="event-pill">Sacred Muhurtham</span>
               <h4>Wedding</h4>
@@ -1011,7 +1551,9 @@
           </article>
 
           <article class="event-card reveal">
-            <div class="event-art zoom-art sangeet-art" style="background-image:url('assets/sangeet.jpg')"></div>
+            <div class="event-art">
+              <img src="assets/sangeet.jpg" alt="Sangeet celebration illustration">
+            </div>
             <div class="event-body">
               <span class="event-pill">Music &amp; Celebration</span>
               <h4>Sangeet</h4>
@@ -1085,8 +1627,7 @@
           <div class="fun-card-copy">
             <h4>Fun moments, happy memories</h4>
             <p>
-              Weddings are more than rituals.
-They are filled with laughter, happy chaos, playful teasing, and moments that stay in our hearts forever.
+              Weddings are not only about rituals. They are also about laughter, teasing, dancing, and unforgettable little moments with the people we love most.
             </p>
           </div>
         </div>
@@ -1104,12 +1645,127 @@ They are filled with laughter, happy chaos, playful teasing, and moments that st
             <div class="family-card reveal">
               <div class="family-label">Groom's Family</div>
               <div class="family-names">Mr Srinivasarao Tamtam<br>&amp; Mrs Padma Kumari</div>
-              <p>Proudly inviting you to celebrate the wedding of our son, Hareesh</p>
+              <p>Proudly inviting you to celebrate the wedding of their son, Hareesh.</p>
             </div>
+
             <div class="family-card reveal">
               <div class="family-label">Bride's Family</div>
-              <div class="family-names">Mr Koppula Girish<br>&amp; Mrs Laxmi Prasanna</div>
-              <p>Warmly inviting you to bless our daughter, Pranavika Sri, on this sacred occasion</p>
+              <div class="family-names">Mr Koppula Giri<br>&amp; Mrs Laxmi Prasanna</div>
+              <p>Warmly inviting you to bless their daughter, Pranavika Sri, on this sacred occasion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Location & Directions</div>
+          <h3>Everything guests need in one place</h3>
+          <p>
+            Find the venue easily and get directions directly from the map below.
+          </p>
+        </div>
+
+        <div class="location-card reveal">
+          <div class="map-frame">
+            <iframe
+              src="https://maps.google.com/maps?q=145%20Aero%20Country%20Rd,%20McKinney,%20TX%2075071&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="location-content">
+            <div class="location-icon-wrap">
+              <div class="location-icon">📍</div>
+            </div>
+
+            <h4>Wedding Venue</h4>
+            <div class="venue-address">
+              145 Aero Country Rd,<br>
+              McKinney, TX 75071
+            </div>
+
+            <div class="venue-actions">
+              <a class="venue-btn maps-btn" href="https://maps.google.com/?q=145+Aero+Country+Rd,+McKinney,+TX+75071" target="_blank" rel="noopener">
+                <span class="venue-btn-icon">➜</span>
+                <span class="venue-btn-text">
+                  <strong>Get Directions</strong>
+                  <small>Open in Google Maps</small>
+                </span>
+                <span class="venue-btn-open">↗</span>
+              </a>
+
+              <a class="venue-btn whatsapp-btn" href="https://wa.me/16162161223?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding%20events." target="_blank" rel="noopener">
+                <span class="venue-btn-icon">💬</span>
+                <span class="venue-btn-text">
+                  <strong>WhatsApp Details</strong>
+                  <small>Message us directly</small>
+                </span>
+                <span class="venue-btn-open">↗</span>
+              </a>
+            </div>
+
+            <p class="venue-contact">WhatsApp Contact: +1 616-216-1223</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boarding-pass">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Our Journey</div>
+          <h3>A love story with a destination</h3>
+          <p>
+            Two hearts, one beautiful journey, and a lifetime together.
+          </p>
+        </div>
+
+        <div class="boarding-wrap reveal">
+          <div class="boarding-top-icon">✈</div>
+
+          <div class="boarding-pass-card">
+            <div class="boarding-header">
+              <span>Wedding Pass</span>
+              <span>❤</span>
+            </div>
+
+            <div class="boarding-body">
+              <div class="boarding-label">Bride &amp; Groom</div>
+              <h4>Hareesh &amp; Pranavika Sri</h4>
+
+              <div class="boarding-divider"></div>
+
+              <div class="boarding-grid">
+                <div class="boarding-item">
+                  <small>From</small>
+                  <strong>Single</strong>
+                </div>
+                <div class="boarding-item">
+                  <small>To</small>
+                  <strong>Forever</strong>
+                </div>
+                <div class="boarding-item">
+                  <small>Date</small>
+                  <strong>09.05</strong>
+                </div>
+                <div class="boarding-item">
+                  <small>Flight</small>
+                  <strong>WED01</strong>
+                </div>
+              </div>
+
+              <div class="boarding-barcode">
+                <span></span>
+              </div>
+              <div class="boarding-code">HAPR09052026</div>
             </div>
           </div>
         </div>
@@ -1119,74 +1775,68 @@ They are filled with laughter, happy chaos, playful teasing, and moments that st
     <section class="section" id="rsvp">
       <div class="container">
         <div class="section-title reveal">
-          <div class="kicker">Guest Details</div>
-          <h3>Everything guests need in one place</h3>
-          <p>
-            Guests can view the location in Google Maps and send RSVP directly on WhatsApp from the buttons below.
-          </p>
+          <h2 class="rsvp-title">RSVP</h2>
+          <p class="rsvp-sub">We hope to count on you</p>
+          <p class="rsvp-note">Please reply before May 1st, 2026</p>
         </div>
 
-        <div class="rsvp-wrap">
-          <div class="rsvp-card reveal">
-            <h4>Wedding details</h4>
-            <div class="detail-list">
-              <div class="detail-item">
-                <strong>Wedding Date</strong>
-                May 9, 2026
-              </div>
-              <div class="detail-item">
-                <strong>Muhurtham</strong>
-                8:50 AM CDT
-              </div>
-              <div class="detail-item">
-                <strong>Venue Address</strong>
-                145 Aero Country Rd, McKinney, TX 75071
-              </div>
-              <div class="detail-item">
-                <strong>Lunch</strong>
-                11:00 AM onwards
-              </div>
-              <div class="detail-item">
-                <strong>Other Events</strong>
-                Haldi on May 8 and Sangeet on May 9 evening
+        <div class="rsvp-form-card reveal">
+          <form id="rsvpForm">
+            <div class="form-group">
+              <label for="guestName">Full Name *</label>
+              <input type="text" id="guestName" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guestPhone">Phone Number *</label>
+              <div class="phone-row">
+                <select id="countryCode">
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+91">🇮🇳 +91</option>
+                </select>
+                <input type="tel" id="guestPhone" placeholder="470 123 456" required>
               </div>
             </div>
-          </div>
 
-          <div class="rsvp-card reveal">
-            <h4>Guest actions</h4>
-            <p>
-              Use the buttons below for directions and RSVP.
-            </p>
-            <div class="action-stack">
-              <a class="btn btn-primary" href="https://maps.google.com/?q=145+Aero+Country+Rd,+McKinney,+TX+75071" target="_blank" rel="noopener">
-                Open Venue in Google Maps
-              </a>
+            <div class="form-group">
+              <label>Will you attend? *</label>
+              <div class="attend-toggle">
+                <label class="toggle-option">
+                  <input type="radio" name="attendance" value="Yes" checked>
+                  <span>Yes, gladly</span>
+                </label>
 
-              <a class="btn btn-whatsapp" href="https://wa.me/16162161223?text=Hi%20Hareesh%20and%20Pranavika,%20we%20are%20happy%20to%20join%20your%20wedding%20celebration!%20Please%20count%20us%20in." target="_blank" rel="noopener">
-                <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
-                  <path d="M19.11 17.23c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.09 2.77.13.18 1.89 2.89 4.57 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.51-.31zM16.28 27h-.01a11.2 11.2 0 0 1-5.69-1.55L5 27l1.61-5.46a11.18 11.18 0 1 1 9.67 5.46zm0-20.36a9.16 9.16 0 0 0-7.85 13.89l.25.39-.95 3.24 3.33-.87.38.23a9.15 9.15 0 1 0 4.84-16.88z"/>
-                </svg>
-                WhatsApp RSVP
-              </a>
-
-              <a class="btn btn-secondary" href="https://wa.me/16162161223?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding%20events." target="_blank" rel="noopener">
-                <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
-                  <path d="M19.11 17.23c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.09 2.77.13.18 1.89 2.89 4.57 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.51-.31zM16.28 27h-.01a11.2 11.2 0 0 1-5.69-1.55L5 27l1.61-5.46a11.18 11.18 0 1 1 9.67 5.46zm0-20.36a9.16 9.16 0 0 0-7.85 13.89l.25.39-.95 3.24 3.33-.87.38.23a9.15 9.15 0 1 0 4.84-16.88z"/>
-                </svg>
-                WhatsApp for Details
-              </a>
+                <label class="toggle-option">
+                  <input type="radio" name="attendance" value="No">
+                  <span>No, sorry</span>
+                </label>
+              </div>
             </div>
-            <p style="margin-top:16px">
-              WhatsApp Contact: +1 616-216-1223
-            </p>
-          </div>
+
+            <div class="form-group" id="guestCountWrap">
+              <label for="guestCount">Number of Guests *</label>
+              <select id="guestCount">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+              </select>
+            </div>
+
+            <button type="submit" class="rsvp-submit" id="rsvpSubmitBtn">
+              <span class="btn-text">Send RSVP via WhatsApp</span>
+              <span class="btn-loader"></span>
+            </button>
+
+            <p class="rsvp-success" id="rsvpSuccessMsg">Opening WhatsApp…</p>
+          </form>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <h5>Hareesh & Pranavika Sri warmly invite</h5>
+      <h5>Tamtam’s Wedding Invitation</h5>
       <p>With love, tradition, and blessings, we look forward to celebrating with you.</p>
     </footer>
   </main>
@@ -1287,7 +1937,6 @@ They are filled with laughter, happy chaos, playful teasing, and moments that st
       loopInterval = setInterval(scheduleTempleLoop, 5000);
       musicOn = true;
       musicToggle.textContent = '♫ Music On';
-      musicFab.textContent = '♫';
       musicFab.style.opacity = '0.8';
     }
 
@@ -1311,7 +1960,6 @@ They are filled with laughter, happy chaos, playful teasing, and moments that st
       masterGain = null;
       musicOn = false;
       musicToggle.textContent = '♫ Temple Music';
-      musicFab.textContent = '♫';
       musicFab.style.opacity = '1';
     }
 
@@ -1322,6 +1970,66 @@ They are filled with laughter, happy chaos, playful teasing, and moments that st
 
     musicToggle.addEventListener('click', toggleMusic);
     musicFab.addEventListener('click', toggleMusic);
+
+    const rsvpForm = document.getElementById("rsvpForm");
+    const guestCountWrap = document.getElementById("guestCountWrap");
+    const submitBtn = document.getElementById("rsvpSubmitBtn");
+    const successMsg = document.getElementById("rsvpSuccessMsg");
+
+    function updateGuestCountVisibility() {
+      const attendance = document.querySelector('input[name="attendance"]:checked').value;
+      if (attendance === "No") {
+        guestCountWrap.classList.add("hidden");
+      } else {
+        guestCountWrap.classList.remove("hidden");
+      }
+    }
+
+    document.querySelectorAll('input[name="attendance"]').forEach(radio => {
+      radio.addEventListener("change", updateGuestCountVisibility);
+    });
+
+    updateGuestCountVisibility();
+
+    rsvpForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("guestName").value.trim();
+      const code = document.getElementById("countryCode").value;
+      const phone = document.getElementById("guestPhone").value.trim();
+      const attendance = document.querySelector('input[name="attendance"]:checked').value;
+      const guestCount = attendance === "Yes"
+        ? document.getElementById("guestCount").value
+        : "0";
+
+      let message = "";
+
+      if (attendance === "Yes") {
+        message =
+          `Hi Hareesh & Pranavika,%0A%0A` +
+          `My name is ${name}.%0A` +
+          `I am happy to attend your wedding.%0A` +
+          `Number of guests: ${guestCount}%0A` +
+          `Phone: ${code} ${phone}%0A%0A` +
+          `Looking forward to celebrating with you!`;
+      } else {
+        message =
+          `Hi Hareesh & Pranavika,%0A%0A` +
+          `My name is ${name}.%0A` +
+          `Sorry, I won't be able to attend your wedding.%0A` +
+          `Phone: ${code} ${phone}%0A%0A` +
+          `Sending my best wishes to you both.`;
+      }
+
+      submitBtn.classList.add("loading");
+      successMsg.classList.add("show");
+
+      setTimeout(() => {
+        const url = `https://wa.me/16162161223?text=${message}`;
+        window.open(url, "_blank");
+        submitBtn.classList.remove("loading");
+      }, 900);
+    });
   </script>
 </body>
 </html>
