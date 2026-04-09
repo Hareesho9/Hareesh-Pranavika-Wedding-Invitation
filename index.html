@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tamtam’s Wedding Invitation</title>
+  <title>Tamtam’s Wedding Date</title>
   <meta name="description" content="A South Indian wedding invitation website for Tamtam’s Wedding Invitation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@
       width:100%;
       z-index:30;
       backdrop-filter:blur(14px);
-      background:rgba(251,247,239,.92);
+      background:rgba(251,247,239,.96);
       border-bottom:1px solid rgba(184,138,44,.14);
     }
 
@@ -111,7 +111,7 @@
     }
 
     .section:first-of-type{
-      padding-top:120px;
+      padding-top:92px;
     }
 
     .container{
@@ -269,13 +269,13 @@
 
     .hero-card{
       position:relative;
-      min-height:640px;
+      min-height:520px;
       border-radius:36px;
       overflow:hidden;
       box-shadow:var(--shadow-soft);
       border:1px solid rgba(184,138,44,.14);
       background:
-        linear-gradient(180deg, rgba(18,8,5,.06) 0%, rgba(18,8,5,.12) 22%, rgba(18,8,5,.28) 100%),
+        linear-gradient(180deg, rgba(18,8,5,.03) 0%, rgba(18,8,5,.08) 35%, rgba(18,8,5,.18) 100%),
         url('assets/home-hero.png') center top / cover no-repeat;
     }
 
@@ -285,10 +285,10 @@
       left:0;
       right:0;
       bottom:0;
-      height:43%;
+      height:58%;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(20,10,6,.08) 18%, rgba(20,10,6,.34) 100%),
-        url('assets/south-temple.PNG') center top / cover no-repeat;
+        linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(20,10,6,.05) 18%, rgba(20,10,6,.20) 100%),
+        url('assets/south-temple.PNG') center 35% / cover no-repeat;
       z-index:1;
       pointer-events:none;
     }
@@ -1175,12 +1175,13 @@
       }
 
       .hero-card{
-        min-height:560px;
+        min-height:480px;
         order:-1;
       }
 
       .hero-card::before{
-        height:44%;
+        height:60%;
+        background-position:center 32%;
       }
 
       .countdown{
@@ -1202,10 +1203,6 @@
     }
 
     @media (max-width: 680px){
-      .topbar{
-        background:rgba(251,247,239,.96);
-      }
-
       .topbar-inner{
         padding:12px 12px 10px;
         flex-direction:column;
@@ -1254,7 +1251,7 @@
       }
 
       .section:first-of-type{
-        padding-top:160px;
+        padding-top:118px;
       }
 
       .hero-shell{
@@ -1292,13 +1289,15 @@
       }
 
       .hero-card{
-        min-height:520px;
+        min-height:420px;
         border-radius:26px;
       }
 
       .hero-card::before{
-        height:46%;
-        background-position:center top;
+        height:62%;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(20,10,6,.05) 18%, rgba(20,10,6,.20) 100%),
+          url('assets/south-temple.PNG') center 30% / cover no-repeat;
       }
 
       .hero-card-badge{
@@ -1710,7 +1709,7 @@
               </a>
             </div>
 
-            <p class="venue-contact">WhatsApp Contact: +1 616-216-1223</p>
+            <p class="venue-contact">WhatsApp Contact: Hareesh </p>
           </div>
         </div>
       </div>
@@ -2012,7 +2011,7 @@
         "Thank you."
       ];
 
-      return encodeURIComponent(lines.join("\n"));
+      return encodeURIComponent(lines.join("\\n"));
     }
 
     rsvpForm.addEventListener("submit", function(e) {
