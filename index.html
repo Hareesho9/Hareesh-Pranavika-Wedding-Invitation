@@ -30,6 +30,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       color:var(--ink);
@@ -191,7 +192,7 @@
       font-size:clamp(4rem, 9vw, 7rem);
       line-height:.92;
       color:var(--gold);
-      font-weight:400;
+      font-weight:700;
       text-shadow:0 3px 18px rgba(184,138,44,.15);
     }
 
@@ -201,7 +202,7 @@
       font-size:clamp(1.15rem, 2.6vw, 2rem);
       line-height:1.45;
       letter-spacing:.08em;
-      font-weight:500;
+      font-weight:600;
       text-transform:uppercase;
       color:var(--maroon);
     }
@@ -307,6 +308,7 @@
       color:var(--muted);
     }
 
+    /* HERO + TEMPLE BLENDED CINEMATIC CARD */
     .hero-card{
       position:relative;
       min-height:700px;
@@ -315,22 +317,37 @@
       box-shadow:var(--shadow-soft);
       border:1px solid rgba(184,138,44,.16);
       background:
-        linear-gradient(180deg, rgba(20,10,4,.12), rgba(20,10,4,.34)),
-        url('assets/home-hero.png') center/cover no-repeat;
+        linear-gradient(180deg, rgba(22,10,6,.12) 0%, rgba(22,10,6,.18) 34%, rgba(22,10,6,.55) 100%),
+        url('assets/home-hero.png') center top / cover no-repeat;
     }
 
     .hero-card::before{
       content:"";
       position:absolute;
+      inset:auto 0 0 0;
+      height:58%;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(24,14,10,.12) 22%, rgba(24,14,10,.72) 100%),
+        url('assets/south-temple.png') center bottom / cover no-repeat;
+      opacity:.95;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
       inset:0;
       background:
-        linear-gradient(180deg, rgba(34,21,6,.02), transparent 36%, rgba(34,21,6,.48) 100%);
-      z-index:1;
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,.06), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.04), transparent 24%, rgba(0,0,0,.12) 100%);
+      z-index:2;
+      pointer-events:none;
     }
 
     .hero-card-badge{
       position:absolute;
-      top:24px;
+      top:28px;
       left:24px;
       right:24px;
       z-index:4;
@@ -380,25 +397,10 @@
       text-transform:uppercase;
     }
 
-    .hero-temple{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      width:100%;
-      height:42%;
-      background-image:url('assets/south-temple.PNG');
-      background-repeat:no-repeat;
-      background-size:cover;
-      background-position:center bottom;
-      z-index:2;
-      border-radius:0 0 36px 36px;
-    }
-
     .floating-ring{
       position:absolute;
       right:28px;
-      bottom:90px;
+      bottom:88px;
       width:88px;
       height:88px;
       border-radius:50%;
@@ -469,24 +471,30 @@
       flex-direction:column;
     }
 
+    /* EVENT IMAGE FIT FIXED */
     .event-art{
-      min-height:260px;
+      height:300px;
       background:#f8f5f0;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:12px;
       overflow:hidden;
+      padding:10px 10px 0;
+      border-bottom:1px solid rgba(184,138,44,.10);
     }
 
     .event-art img{
       width:100%;
-      height:240px;
+      height:100%;
       object-fit:contain;
-      object-position:center top;
-      border-radius:18px;
+      object-position:center;
       display:block;
+      transform:scale(1.12);
     }
+
+    .haldi-img{ object-position:center center; }
+    .wedding-img{ object-position:center center; }
+    .sangeet-img{ object-position:center center; }
 
     .event-body{
       padding:28px;
@@ -1251,12 +1259,13 @@
       }
 
       .hero-card{
-        min-height:540px;
+        min-height:560px;
         order:-1;
       }
 
-      .hero-temple{
-        height:38%;
+      .hero-card::before{
+        height:52%;
+        background-position:center bottom;
       }
 
       .countdown{
@@ -1278,56 +1287,147 @@
     }
 
     @media (max-width: 680px){
+      .topbar{
+        background:rgba(251,245,234,.96);
+      }
+
       .topbar-inner{
-        padding:12px 14px;
+        padding:12px 12px 10px;
+        flex-direction:column;
         align-items:flex-start;
+        gap:10px;
       }
 
       .brand{
-        font-size:13px;
-        font-weight:700;
+        width:100%;
+        font-size:11px;
+        line-height:1.3;
+        letter-spacing:.12em;
+        text-align:center;
+        white-space:normal;
       }
 
       .nav{
-        gap:6px;
-        justify-content:flex-end;
+        width:100%;
+        display:flex;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        gap:8px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        padding-bottom:2px;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+
+      .nav::-webkit-scrollbar{
+        display:none;
       }
 
       .nav a{
+        flex:0 0 auto;
         font-size:12px;
-        padding:6px 9px;
+        padding:8px 12px;
+        border-radius:999px;
+        background:rgba(184,138,44,.08);
+        white-space:nowrap;
       }
 
       .section{
         padding:80px 14px;
       }
 
+      .section:first-of-type{
+        padding-top:170px;
+      }
+
+      .hero-shell{
+        gap:18px;
+      }
+
+      .hero-copy{
+        padding-top:0;
+        text-align:center;
+      }
+
+      .eyebrow{
+        justify-content:center;
+        width:100%;
+      }
+
       .hero h1{
-        font-size:4rem;
+        font-size:3.1rem;
+      }
+
+      .hero h2{
+        font-size:1rem;
+        line-height:1.5;
+      }
+
+      .hero p{
+        font-size:.95rem;
+        line-height:1.7;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-actions{
+        justify-content:center;
       }
 
       .hero-card{
         min-height:460px;
+        border-radius:26px;
       }
 
-      .hero-temple{
-        height:34%;
+      .hero-card::before{
+        height:46%;
+        background-position:center bottom;
+        background-size:cover;
       }
 
-      .floating-ring{
-        right:20px;
-        bottom:70px;
-        width:74px;
-        height:74px;
+      .hero-card-badge{
+        top:18px;
+        left:18px;
+        right:18px;
+        padding:16px 14px;
+        border-radius:20px;
       }
 
       .hero-card-badge strong{
         font-size:1.9rem;
       }
 
+      .hero-card-badge span{
+        font-size:.9rem;
+      }
+
       .bell-row{
         font-size:20px;
         gap:8px;
+      }
+
+      .floating-ring{
+        right:18px;
+        bottom:62px;
+        width:66px;
+        height:66px;
+        font-size:1.4rem;
+      }
+
+      .countdown{
+        grid-template-columns:repeat(2, 1fr);
+        max-width:100%;
+        margin:0 auto;
+      }
+
+      .event-art{
+        height:260px;
+        padding:8px 8px 0;
+      }
+
+      .event-art img{
+        transform:scale(1.15);
       }
 
       .event-body{
@@ -1501,7 +1601,6 @@
             <span>8:50 AM CDT</span>
           </div>
 
-          <div class="hero-temple"></div>
           <div class="floating-ring">✦</div>
         </div>
       </div>
@@ -1521,7 +1620,7 @@
         <div class="card-grid">
           <article class="event-card reveal">
             <div class="event-art">
-              <img src="assets/haldi.png" alt="Haldi ceremony illustration">
+              <img src="assets/haldi.png" alt="Haldi ceremony illustration" class="haldi-img">
             </div>
             <div class="event-body">
               <span class="event-pill">Haldi Ceremony</span>
@@ -1536,7 +1635,7 @@
 
           <article class="event-card reveal">
             <div class="event-art">
-              <img src="assets/wedding-theme.jpg" alt="Wedding ceremony illustration">
+              <img src="assets/wedding-theme.jpg" alt="Wedding ceremony illustration" class="wedding-img">
             </div>
             <div class="event-body">
               <span class="event-pill">Sacred Muhurtham</span>
@@ -1552,7 +1651,7 @@
 
           <article class="event-card reveal">
             <div class="event-art">
-              <img src="assets/sangeet.jpg" alt="Sangeet celebration illustration">
+              <img src="assets/sangeet.jpg" alt="Sangeet celebration illustration" class="sangeet-img">
             </div>
             <div class="event-body">
               <span class="event-pill">Music &amp; Celebration</span>
@@ -1703,7 +1802,11 @@
               </a>
 
               <a class="venue-btn whatsapp-btn" href="https://wa.me/16162161223?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding%20events." target="_blank" rel="noopener">
-                <span class="venue-btn-icon">💬</span>
+                <span class="venue-btn-icon">
+                  <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M19.11 17.23c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.09 2.77.13.18 1.89 2.89 4.57 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.51-.31zM16.28 27h-.01a11.2 11.2 0 0 1-5.69-1.55L5 27l1.61-5.46a11.18 11.18 0 1 1 9.67 5.46zm0-20.36a9.16 9.16 0 0 0-7.85 13.89l.25.39-.95 3.24 3.33-.87.38.23a9.15 9.15 0 1 0 4.84-16.88z"/>
+                  </svg>
+                </span>
                 <span class="venue-btn-text">
                   <strong>WhatsApp Details</strong>
                   <small>Message us directly</small>
@@ -2028,6 +2131,9 @@
         const url = `https://wa.me/16162161223?text=${message}`;
         window.open(url, "_blank");
         submitBtn.classList.remove("loading");
+        successMsg.classList.remove("show");
+        rsvpForm.reset();
+        updateGuestCountVisibility();
       }, 900);
     });
   </script>
