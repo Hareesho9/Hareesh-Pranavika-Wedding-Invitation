@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tamtam’s Wedding Invitation </title>
+  <title>Tamtam’s Wedding Invitation</title>
   <meta name="description" content="A South Indian wedding invitation website for Tamtam’s Wedding Invitation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -622,6 +622,11 @@
       line-height:1.8;
     }
 
+    .family-card strong{
+      color:var(--maroon);
+      font-weight:600;
+    }
+
     .location-card{
       margin-top:40px;
       background:rgba(255,255,255,.74);
@@ -1176,7 +1181,7 @@
 
       .hero-card{
         min-height:480px;
-        order:-1;
+        order:0;
       }
 
       .hero-card::before{
@@ -1204,17 +1209,17 @@
 
     @media (max-width: 680px){
       .topbar-inner{
-        padding:12px 12px 10px;
+        padding:14px 14px 12px;
         flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
+        align-items:center;
+        gap:12px;
       }
 
       .brand{
         width:100%;
-        font-size:13px;
-        line-height:1.3;
-        letter-spacing:.14em;
+        font-size:18px;
+        line-height:1.25;
+        letter-spacing:.16em;
         text-align:center;
         white-space:normal;
         font-weight:800;
@@ -1225,10 +1230,10 @@
         display:flex;
         flex-wrap:nowrap;
         justify-content:flex-start;
-        gap:8px;
+        gap:10px;
         overflow-x:auto;
         overflow-y:hidden;
-        padding-bottom:2px;
+        padding-bottom:4px;
         -webkit-overflow-scrolling:touch;
         scrollbar-width:none;
       }
@@ -1239,8 +1244,8 @@
 
       .nav a{
         flex:0 0 auto;
-        font-size:12px;
-        padding:8px 12px;
+        font-size:13px;
+        padding:10px 16px;
         border-radius:999px;
         background:rgba(184,138,44,.08);
         white-space:nowrap;
@@ -1251,11 +1256,11 @@
       }
 
       .section:first-of-type{
-        padding-top:118px;
+        padding-top:132px;
       }
 
       .hero-shell{
-        gap:18px;
+        gap:22px;
       }
 
       .hero-copy{
@@ -1266,19 +1271,24 @@
       .eyebrow{
         justify-content:center;
         width:100%;
+        font-size:11px;
+        margin-bottom:14px;
       }
 
       .hero h1{
-        font-size:3.1rem;
+        font-size:4rem;
+        line-height:.95;
+        margin-bottom:8px;
       }
 
       .hero h2{
-        font-size:1rem;
-        line-height:1.5;
+        font-size:1.2rem;
+        line-height:1.45;
+        margin:10px 0 14px;
       }
 
       .hero p{
-        font-size:.95rem;
+        font-size:1rem;
         line-height:1.7;
         margin-left:auto;
         margin-right:auto;
@@ -1289,36 +1299,45 @@
       }
 
       .hero-card{
-        min-height:420px;
-        border-radius:26px;
+        min-height:500px;
+        border-radius:28px;
       }
 
       .hero-card::before{
-        height:62%;
+        height:50%;
         background:
-          linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(20,10,6,.05) 18%, rgba(20,10,6,.20) 100%),
-          url('assets/south-temple.png') center 30% / cover no-repeat;
+          linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(20,10,6,.04) 18%, rgba(20,10,6,.14) 100%),
+          url('assets/south-temple.png') center 18% / cover no-repeat;
       }
 
       .hero-card-badge{
-        top:18px;
-        left:18px;
-        right:18px;
-        padding:16px 14px;
-        border-radius:20px;
+        top:14px;
+        left:14px;
+        right:14px;
+        padding:14px 12px;
+        border-radius:18px;
+      }
+
+      .hero-card-badge small{
+        font-size:.68rem;
+        letter-spacing:.16em;
+        margin-bottom:6px;
       }
 
       .hero-card-badge strong{
-        font-size:1.95rem;
+        font-size:1.7rem;
+        line-height:1.08;
       }
 
       .hero-card-badge span{
-        font-size:.9rem;
+        font-size:.82rem;
+        margin-top:6px;
       }
 
       .bell-row{
-        font-size:20px;
-        gap:8px;
+        font-size:18px;
+        gap:6px;
+        margin-bottom:8px;
       }
 
       .countdown{
@@ -1637,8 +1656,17 @@
           <div class="family-grid">
             <div class="family-card reveal">
               <div class="family-label">Groom's Family</div>
-              <div class="family-names">Mr Srinivasarao Tamtam<br>&amp; Mrs Padma Kumari</div>
-              <p>Proudly inviting you to celebrate the wedding of our son, Hareesh</p>
+
+              <div class="family-names">
+                Mr Srinivasarao Tamtam<br>
+                &amp; Mrs Padma Kumari
+              </div>
+
+              <p>
+                Along with<br>
+                <strong>Brother Mr. Rajesh Tamtam &amp; Mrs. Swapna</strong><br><br>
+                joyfully invite you to celebrate the wedding of our beloved Hareesh
+              </p>
             </div>
 
             <div class="family-card reveal">
@@ -1695,7 +1723,7 @@
                 <span class="venue-btn-open">↗</span>
               </a>
 
-              <a class="venue-btn whatsapp-btn" href="https://wa.me/16162161223?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding%20events." target="_blank" rel="noopener">
+              <a class="venue-btn whatsapp-btn" href="https://wa.me/15718886665?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding%20events." target="_blank" rel="noopener">
                 <span class="venue-btn-icon">
                   <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
                     <path d="M19.11 17.23c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.09 2.77.13.18 1.89 2.89 4.57 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.51-.31zM16.28 27h-.01a11.2 11.2 0 0 1-5.69-1.55L5 27l1.61-5.46a11.18 11.18 0 1 1 9.67 5.46zm0-20.36a9.16 9.16 0 0 0-7.85 13.89l.25.39-.95 3.24 3.33-.87.38.23a9.15 9.15 0 1 0 4.84-16.88z"/>
@@ -1709,7 +1737,7 @@
               </a>
             </div>
 
-            <p class="venue-contact">WhatsApp Contact: Hareesh </p>
+            <p class="venue-contact">WhatsApp Contact: Hareesh</p>
           </div>
         </div>
       </div>
@@ -1796,6 +1824,16 @@
             </div>
 
             <div class="form-group">
+              <label for="eventSelection">Which event will you attend? *</label>
+              <select id="eventSelection" required>
+                <option value="Haldi">Haldi</option>
+                <option value="Wedding" selected>Wedding</option>
+                <option value="Sangeet">Sangeet</option>
+                <option value="All">All Events</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label>Will you attend? *</label>
               <div class="attend-toggle">
                 <label class="toggle-option">
@@ -1840,7 +1878,7 @@
 
   <div class="floating-actions">
     <button class="fab" id="musicFab" type="button">♫</button>
-    <a class="fab secondary" href="https://wa.me/16162161223?text=Hi%20Hareesh%20and%20Pranavika,%20we%20are%20happy%20to%20join%20your%20wedding%20celebration!%20Please%20count%20us%20in." target="_blank" rel="noopener" aria-label="WhatsApp RSVP">
+    <a class="fab secondary" href="https://wa.me/15718886665?text=Hi%20Hareesh%20and%20Pranavika,%20we%20are%20happy%20to%20join%20your%20wedding%20celebration!%20Please%20count%20us%20in." target="_blank" rel="noopener" aria-label="WhatsApp RSVP">
       <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
         <path d="M19.11 17.23c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.09 2.77.13.18 1.89 2.89 4.57 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.51-.31zM16.28 27h-.01a11.2 11.2 0 0 1-5.69-1.55L5 27l1.61-5.46a11.18 11.18 0 1 1 9.67 5.46zm0-20.36a9.16 9.16 0 0 0-7.85 13.89l.25.39-.95 3.24 3.33-.87.38.23a9.15 9.15 0 1 0 4.84-16.88z"/>
       </svg>
@@ -1988,30 +2026,52 @@
 
     updateGuestCountVisibility();
 
-    function buildWhatsappMessage(name, code, phone, attendance, guestCount){
+    function getEventMessage(eventName, attendance){
+      if (attendance === "No") {
+        return "💐 Sorry, we won't be able to attend. Sending our best wishes.";
+      }
+
+      switch(eventName){
+        case "Haldi":
+          return "🌼 Excited to join the Haldi and celebrate joyful moments together!";
+        case "Wedding":
+          return "💍 Honored to attend your wedding and witness your beautiful union!";
+        case "Sangeet":
+          return "🎶 Ready to dance and celebrate at the Sangeet night!";
+        case "All":
+          return "🎉 Excited to be part of all your wedding celebrations!";
+        default:
+          return "🎉 Happy to attend your celebration!";
+      }
+    }
+
+    function buildWhatsappMessage(name, code, phone, eventName, attendance, guestCount){
       const cleanName = name.trim();
       const cleanPhone = `${code} ${phone.trim()}`;
-      const attendingText = attendance === "Yes" ? "Yes" : "No";
       const guestsText = attendance === "Yes" ? guestCount : "0";
+      const today = new Date().toLocaleDateString();
+      const eventLine = eventName === "All" ? "All Events" : eventName;
+      const eventMessage = getEventMessage(eventName, attendance);
 
       const lines = [
+        "🙏 *Wedding RSVP*",
+        "",
         "Hi Hareesh & Pranavika,",
         "",
-        "Wedding RSVP Details",
-        "----------------------",
-        `Name: ${cleanName}`,
-        `Phone: ${cleanPhone}`,
-        `Attendance: ${attendingText}`,
-        `Number of Guests: ${guestsText}`,
+        "*Guest Details*",
+        `👤 Name: ${cleanName}`,
+        `📞 Phone: ${cleanPhone}`,
+        `🎊 Event: ${eventLine}`,
+        `✅ Attending: ${attendance}`,
+        `👥 Guests: ${guestsText}`,
+        `📅 RSVP Date: ${today}`,
         "",
-        attendance === "Yes"
-          ? "We are happy to attend your wedding celebration."
-          : "Sorry, we won't be able to attend. Sending our best wishes.",
+        eventMessage,
         "",
-        "Thank you."
+        "❤️ Thank you!"
       ];
 
-      return encodeURIComponent(lines.join("\\n"));
+      return encodeURIComponent(lines.join("\n"));
     }
 
     rsvpForm.addEventListener("submit", function(e) {
@@ -2020,23 +2080,24 @@
       const name = document.getElementById("guestName").value.trim();
       const code = document.getElementById("countryCode").value;
       const phone = document.getElementById("guestPhone").value.trim();
+      const eventName = document.getElementById("eventSelection").value;
       const attendance = document.querySelector('input[name="attendance"]:checked').value;
       const guestCount = attendance === "Yes"
         ? document.getElementById("guestCount").value
         : "0";
 
-      if (!name || !phone) {
-        alert("Please enter your full name and phone number.");
+      if (!name || !phone || !eventName) {
+        alert("Please fill all required fields.");
         return;
       }
 
-      const message = buildWhatsappMessage(name, code, phone, attendance, guestCount);
+      const message = buildWhatsappMessage(name, code, phone, eventName, attendance, guestCount);
 
       submitBtn.classList.add("loading");
       successMsg.classList.add("show");
 
       setTimeout(() => {
-        const url = `https://wa.me/16162161223?text=${message}`;
+        const url = `https://wa.me/15718886665?text=${message}`;
         window.open(url, "_blank");
         submitBtn.classList.remove("loading");
         successMsg.classList.remove("show");
