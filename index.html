@@ -388,7 +388,8 @@
 
     .card-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(1, minmax(0, 760px));
+      justify-content:center;
       gap:24px;
       margin-top:38px;
     }
@@ -406,7 +407,7 @@
     }
 
     .event-art{
-      height:300px;
+      height:320px;
       background:#f8f5f0;
       display:flex;
       align-items:center;
@@ -422,7 +423,7 @@
       object-fit:contain;
       object-position:center;
       display:block;
-      transform:scale(1.12);
+      transform:scale(1.05);
     }
 
     .event-body{
@@ -1352,7 +1353,7 @@
       }
 
       .event-art img{
-        transform:scale(1.14);
+        transform:scale(1.08);
       }
 
       .event-body{
@@ -1472,7 +1473,7 @@
       <div class="brand">Tamtam’s Wedding Invitation</div>
       <nav class="nav">
         <a href="#home">Home</a>
-        <a href="#events">Events</a>
+        <a href="#events">Invitation</a>
         <a href="#schedule">Schedule</a>
         <a href="#family">Family</a>
         <a href="#details">Details</a>
@@ -1489,7 +1490,7 @@
           <h1>Save the Date</h1>
           <h2>Hareesh &amp; Pranavika Sri</h2>
           <p>
-            With the blessings of our families, we invite you to celebrate our wedding and join us for a beautiful journey of love, tradition, laughter, and togetherness.
+            With the blessings of our families, we warmly invite you to join us for our wedding ceremony and bless us as we begin this beautiful new journey together.
           </p>
 
           <div class="hero-actions">
@@ -1523,29 +1524,14 @@
     <section class="section" id="events">
       <div class="container">
         <div class="section-title reveal">
-          <div class="kicker">Celebration Chapters</div>
-          <h3>Every function, one beautiful memory</h3>
+          <div class="kicker">Wedding Invitation</div>
+          <h3>One sacred day, one beautiful beginning</h3>
           <p>
-            From the bright Haldi to the sacred wedding ceremony and the joyful Sangeet night, we would be honored to celebrate every special moment with you.
+            We would be honored to have your presence and blessings as we celebrate our wedding ceremony with love, tradition, and family.
           </p>
         </div>
 
         <div class="card-grid">
-          <article class="event-card reveal">
-            <div class="event-art">
-              <img src="assets/haldi.png" alt="Haldi ceremony illustration">
-            </div>
-            <div class="event-body">
-              <span class="event-pill">Haldi Ceremony</span>
-              <h4>Haldi</h4>
-              <div class="event-meta">
-                <div class="meta-line"><strong>Date</strong><span>May 8, 2026</span></div>
-                <div class="meta-line"><strong>Time</strong><span>4:00 PM onwards</span></div>
-                <div class="meta-line"><strong>Venue</strong><span>145 Aero Country Rd, McKinney, TX 75071</span></div>
-              </div>
-            </div>
-          </article>
-
           <article class="event-card reveal">
             <div class="event-art">
               <img src="assets/wedding-theme.jpg" alt="Wedding ceremony illustration">
@@ -1561,22 +1547,6 @@
               </div>
             </div>
           </article>
-
-          <article class="event-card reveal">
-            <div class="event-art">
-              <img src="assets/sangeet.jpg" alt="Sangeet celebration illustration">
-            </div>
-            <div class="event-body">
-              <span class="event-pill">Music &amp; Celebration</span>
-              <h4>Sangeet</h4>
-              <div class="event-meta">
-                <div class="meta-line"><strong>Date</strong><span>May 9, 2026</span></div>
-                <div class="meta-line"><strong>Time</strong><span>7:00 PM CDT</span></div>
-                <div class="meta-line"><strong>Venue</strong><span>145 Aero Country Rd, McKinney, TX 75071</span></div>
-                <div class="meta-line"><strong>Dinner</strong><span>Followed by dinner</span></div>
-              </div>
-            </div>
-          </article>
         </div>
 
         <div class="ornament"></div>
@@ -1587,26 +1557,13 @@
       <div class="container">
         <div class="section-title reveal">
           <div class="kicker">Event Flow</div>
-          <h3>The celebration timeline</h3>
+          <h3>The wedding timeline</h3>
           <p>
-            A quick schedule section helps guests understand the order of the events at one glance.
+            A simple wedding schedule so guests can see the important details at one glance.
           </p>
         </div>
 
         <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-date">
-              <strong>May 8</strong>
-              <span>Friday</span>
-            </div>
-            <div class="timeline-body">
-              <h5>Haldi Ceremony</h5>
-              <p>
-                Join us for a bright and joyful Haldi celebration starting at 4:00 PM at 145 Aero Country Rd, McKinney, TX 75071.
-              </p>
-            </div>
-          </div>
-
           <div class="timeline-item reveal">
             <div class="timeline-date">
               <strong>May 9</strong>
@@ -1619,19 +1576,6 @@
               </p>
             </div>
           </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-date">
-              <strong>May 9</strong>
-              <span>Saturday</span>
-            </div>
-            <div class="timeline-body">
-              <h5>Sangeet Celebration</h5>
-              <p>
-                The evening continues with music, dance, and dinner beginning at 7:00 PM CDT at 145 Aero Country Rd, McKinney, TX 75071.
-              </p>
-            </div>
-          </div>
         </div>
 
         <div class="fun-card reveal">
@@ -1639,7 +1583,7 @@
           <div class="fun-card-copy">
             <h4>Fun moments, happy memories</h4>
             <p>
-              Weddings are not only about rituals. They are also about laughter, teasing, dancing, and unforgettable little moments with the people we love most.
+              Weddings are not only about rituals. They are also about laughter, teasing, and unforgettable little moments with the people we love most.
             </p>
           </div>
         </div>
@@ -1672,7 +1616,11 @@
             <div class="family-card reveal">
               <div class="family-label">Bride's Family</div>
               <div class="family-names">Mr Koppula Girish<br>&amp; Mrs Laxmi Prasanna</div>
-              <p>Warmly inviting you to bless our daughter, Pranavika Sri, on this sacred occasion</p>
+              <p>
+                Along with<br>
+                <strong>Little Brother Dhana Koteshwar</strong><br><br>
+                warmly invite you to bless our beloved daughter, Pranavika Sri, as she begins this beautiful new journey
+              </p>
             </div>
           </div>
         </div>
@@ -1723,7 +1671,7 @@
                 <span class="venue-btn-open">↗</span>
               </a>
 
-              <a class="venue-btn whatsapp-btn" href="https://wa.me/15718886665?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding%20events." target="_blank" rel="noopener">
+              <a class="venue-btn whatsapp-btn" href="https://wa.me/15718886665?text=Hi%20Hareesh%20and%20Pranavika,%20we%20need%20more%20details%20about%20the%20wedding." target="_blank" rel="noopener">
                 <span class="venue-btn-icon">
                   <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
                     <path d="M19.11 17.23c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.14-.18.27-.69.87-.85 1.04-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.72.34-.24.27-.94.92-.94 2.24 0 1.32.96 2.59 1.09 2.77.13.18 1.89 2.89 4.57 4.05.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.51-.31zM16.28 27h-.01a11.2 11.2 0 0 1-5.69-1.55L5 27l1.61-5.46a11.18 11.18 0 1 1 9.67 5.46zm0-20.36a9.16 9.16 0 0 0-7.85 13.89l.25.39-.95 3.24 3.33-.87.38.23a9.15 9.15 0 1 0 4.84-16.88z"/>
@@ -1824,12 +1772,9 @@
             </div>
 
             <div class="form-group">
-              <label for="eventSelection">Which event will you attend? *</label>
+              <label for="eventSelection">Event *</label>
               <select id="eventSelection" required>
-                <option value="Haldi">Haldi</option>
                 <option value="Wedding" selected>Wedding</option>
-                <option value="Sangeet">Sangeet</option>
-                <option value="All">All Events</option>
               </select>
             </div>
 
@@ -2026,32 +1971,19 @@
 
     updateGuestCountVisibility();
 
-    function getEventMessage(eventName, attendance){
+    function getEventMessage(attendance){
       if (attendance === "No") {
         return "💐 Sorry, we won't be able to attend. Sending our best wishes.";
       }
-
-      switch(eventName){
-        case "Haldi":
-          return "🌼 Excited to join the Haldi and celebrate joyful moments together!";
-        case "Wedding":
-          return "💍 Honored to attend your wedding and witness your beautiful union!";
-        case "Sangeet":
-          return "🎶 Ready to dance and celebrate at the Sangeet night!";
-        case "All":
-          return "🎉 Excited to be part of all your wedding celebrations!";
-        default:
-          return "🎉 Happy to attend your celebration!";
-      }
+      return "💍 Honored to attend your wedding and witness your beautiful union!";
     }
 
-    function buildWhatsappMessage(name, code, phone, eventName, attendance, guestCount){
+    function buildWhatsappMessage(name, code, phone, attendance, guestCount){
       const cleanName = name.trim();
       const cleanPhone = `${code} ${phone.trim()}`;
       const guestsText = attendance === "Yes" ? guestCount : "0";
       const today = new Date().toLocaleDateString();
-      const eventLine = eventName === "All" ? "All Events" : eventName;
-      const eventMessage = getEventMessage(eventName, attendance);
+      const eventMessage = getEventMessage(attendance);
 
       const lines = [
         "🙏 *Wedding RSVP*",
@@ -2061,7 +1993,7 @@
         "*Guest Details*",
         `👤 Name: ${cleanName}`,
         `📞 Phone: ${cleanPhone}`,
-        `🎊 Event: ${eventLine}`,
+        `🎊 Event: Wedding`,
         `✅ Attending: ${attendance}`,
         `👥 Guests: ${guestsText}`,
         `📅 RSVP Date: ${today}`,
@@ -2080,18 +2012,17 @@
       const name = document.getElementById("guestName").value.trim();
       const code = document.getElementById("countryCode").value;
       const phone = document.getElementById("guestPhone").value.trim();
-      const eventName = document.getElementById("eventSelection").value;
       const attendance = document.querySelector('input[name="attendance"]:checked').value;
       const guestCount = attendance === "Yes"
         ? document.getElementById("guestCount").value
         : "0";
 
-      if (!name || !phone || !eventName) {
+      if (!name || !phone) {
         alert("Please fill all required fields.");
         return;
       }
 
-      const message = buildWhatsappMessage(name, code, phone, eventName, attendance, guestCount);
+      const message = buildWhatsappMessage(name, code, phone, attendance, guestCount);
 
       submitBtn.classList.add("loading");
       successMsg.classList.add("show");
