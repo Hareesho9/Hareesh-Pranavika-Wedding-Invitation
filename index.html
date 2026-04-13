@@ -1695,7 +1695,9 @@
       loopInterval = setInterval(scheduleTempleLoop, 5000);
       musicOn = true;
       musicToggle.textContent = '♫ Music On';
-      musicFab.style.opacity = '0.82';
+      if (musicFab) {
+  musicFab.style.opacity = '0.82';
+}
     }
 
     function stopMusic(){
@@ -1718,7 +1720,9 @@
       masterGain = null;
       musicOn = false;
       musicToggle.textContent = '♫ Temple Music';
-      musicFab.style.opacity = '1';
+     if (musicFab) {
+  musicFab.style.opacity = '1';
+}
     }
 
     function toggleMusic(){
@@ -1727,7 +1731,10 @@
     }
 
     musicToggle.addEventListener('click', toggleMusic);
-    musicFab.addEventListener('click', toggleMusic);
+
+if (musicFab) {
+  musicFab.addEventListener('click', toggleMusic);
+}
 
     const rsvpForm = document.getElementById("rsvpForm");
     const guestCountWrap = document.getElementById("guestCountWrap");
@@ -1807,7 +1814,7 @@
 
       setTimeout(() => {
         const url = `https://wa.me/15718886665?text=${message}`;
-        window.open(url, "_blank");
+       window.location.href = url;
         submitBtn.classList.remove("loading");
         successMsg.classList.remove("show");
         rsvpForm.reset();
